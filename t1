@@ -1,0 +1,26 @@
+# Rule-based chatbot
+import random
+
+# Define a dictionary of rules with keywords and their corresponding responses
+rules = {
+    "hello": ["Hi there!", "Hello!", "Greetings!"],
+    "how are you": ["I'm just a chatbot, but I'm doing fine. How can I assist you?", "I don't have feelings, but I'm here to help."],
+    "goodbye": ["Goodbye!", "See you later!", "Farewell!"],
+    "help": ["I can help you with a variety of topics. Just ask me a question!"]
+}
+# Function to generate responses
+def respond(input_text):
+    for key, value in rules.items():
+        if key in input_text:
+            return random.choice(value)
+    return "I'm sorry, I don't understand. Please try another question."
+
+# Main loop for the chatbot
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == "exit":
+        h
+        print("Chatbot: Goodbye!")
+        break
+    response = respond(user_input.lower())
+    print("Chatbot:", response)
